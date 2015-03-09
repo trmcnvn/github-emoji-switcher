@@ -5,14 +5,14 @@
 
     for (i=0; i < emojis.length; i++) {
       emojis[i].src = emojis[i].src
-        .replace('https://assets-cdn.github.com/images/icons/emoji/unicode/', 'https://raw.githubusercontent.com/iamcal/emoji-data/master/img-google-64/');
+        .replace('https://assets-cdn.github.com/images/icons/emoji/unicode/', 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/36x36/');
     }
 
     var emojiIcons = document.querySelectorAll('.emoji-icon');
 
     for (i=0; i < emojiIcons.length; i++) {
       emojiIcons[i].style.backgroundImage = emojiIcons[i].style.backgroundImage
-        .replace('https://assets-cdn.github.com/images/icons/emoji/unicode/', 'https://raw.githubusercontent.com/iamcal/emoji-data/master/img-google-64/');
+        .replace('https://assets-cdn.github.com/images/icons/emoji/unicode/', 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/36x36/');
     }
   };
 

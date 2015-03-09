@@ -74,9 +74,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', [
 		'clean:build',
 		'uglify:build',
-		'less:build',
 		'copy:build',
-		'clean:css',
 		'clean:js',
 		'setMinContentScripts',
 		'compress'
