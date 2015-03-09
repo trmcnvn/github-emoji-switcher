@@ -51,7 +51,7 @@
 
   var allPjaxes = document.querySelectorAll('div[data-pjax-container]');
   for (var i=0; i < allPjaxes.length; i++) {
-    obs.observe(allPjaxes[i], {childList: true});
+    obs.observe(allPjaxes[i], {childList: true, subtree: true});
   }
 
   var preview = document.querySelectorAll('.markdown-body');
