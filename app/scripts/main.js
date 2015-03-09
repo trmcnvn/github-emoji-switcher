@@ -54,9 +54,9 @@
     obs.observe(allPjaxes[i], {childList: true});
   }
 
-  var preview = document.querySelector('.markdown-body');
-  if (preview) {
-    obs.observe(preview, {childList: true});
+  var preview = document.querySelectorAll('.markdown-body');
+  for (var i = 0; i < preview.length; ++i) {
+    obs.observe(preview[i], {childList: true});
   }
 
   hookSuggesters();
