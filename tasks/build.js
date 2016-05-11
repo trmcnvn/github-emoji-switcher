@@ -72,11 +72,11 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('build', [
+    'updatePackage',
 		'clean:build',
 		'uglify:build',
 		'copy:build',
 		'clean:js',
-    'updatePackage',
 		'setMinContentScripts',
 		'compress'
 	]);

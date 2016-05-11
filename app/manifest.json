@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "GitHub Emojifier for Twemoji",
     "description": "Converts Emoji on GitHub to Twitter-style Emoji",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "icons": {
         "16": "img/icon_16.png",
         "48": "img/icon_48.png",
@@ -20,7 +20,7 @@
             ],
             "run_at": "document_end",
             "js": [
-                "scripts/main.js"
+                "js/main.js"
             ]
         }
     ]
