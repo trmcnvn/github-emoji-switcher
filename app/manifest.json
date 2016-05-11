@@ -1,27 +1,27 @@
 {
-  "manifest_version": 2,
-  "name": "GitHub Emojifier for Twemoji",
-  "description": "Converts Emoji on GitHub to Twitter-style Emoji",
-  "version": "0.1.1",
-  "icons": {
-    "16": "img/icon_16.png",
-    "48": "img/icon_48.png",
-    "128": "img/icon_128.png"
-  },
-  "permissions": [
-    "http://*.github.com/*",
-    "https://*.github.com/*"
-  ],
-  "content_scripts": [
-    {
-      "matches": [
-        "https://*.github.com/*",
-        "https://github.com/*"
-      ],
-      "run_at": "document_end",
-      "js": [
-        "scripts/main.js"
-      ]
-    }
-  ]
+    "manifest_version": 2,
+    "name": "GitHub Emojifier for Twemoji",
+    "description": "Converts Emoji on GitHub to Twitter-style Emoji",
+    "version": "0.2.0",
+    "icons": {
+        "16": "img/icon_16.png",
+        "48": "img/icon_48.png",
+        "128": "img/icon_128.png"
+    },
+    "permissions": [
+        "http://*.github.com/*",
+        "https://*.github.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.github.com/*",
+                "https://github.com/*"
+            ],
+            "run_at": "document_end",
+            "js": [
+                "scripts/main.js"
+            ]
+        }
+    ]
 }

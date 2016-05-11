@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 
 		var	regex = /(\d+\.\d+\.)(\d+)/,
 			version = regex.exec(manifest.version),
-			newBuild = parseInt(version[2]) + 1,
+			newBuild = parseInt(version[2]),
 			newVersion = manifest.version.replace(regex, '$1'+newBuild);
 
 		grunt.log.ok("Updating manifest version to " + chalk.cyan(newVersion));
@@ -76,6 +76,7 @@ module.exports = function (grunt) {
 		'uglify:build',
 		'copy:build',
 		'clean:js',
+    'updatePackage',
 		'setMinContentScripts',
 		'compress'
 	]);
