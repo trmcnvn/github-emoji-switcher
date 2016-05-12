@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 
 		var	regex = /(\d+\.\d+\.)(\d+)/,
 			version = regex.exec(manifest.version),
-			newBuild = parseInt(version[2]),
+			newBuild = parseInt(version[2]) + 1,
 			newVersion = manifest.version.replace(regex, '$1'+newBuild);
 
 		grunt.log.ok("Updating manifest version to " + chalk.cyan(newVersion));
@@ -39,45 +39,11 @@ module.exports = function (grunt) {
 		done();
 	});
 
-	grunt.registerMultiTask('setMinContentScripts', 'Set all content_script scripts to ".min.js".', function() {
-		var path = require('path');
-		var chalk = require('chalk');
-		grunt.log.ok();
-
-		var done = this.async();
-
-		var options = this.options({
-			manifest: 'app/manifest.json'
-		});
-
-		if (!grunt.file.exists(options.manifest)) {
-			grunt.log.error('No manifest file exists at ' + chalk.cyan(path.resolve(options.manifest)));
-		}
-
-		var manifest = grunt.file.readJSON(options.manifest);
-
-		manifest.content_scripts.forEach(function(script, i) {
-			if (script.js){
-				script.js.forEach(function(js, j) {
-					if (!/.min.js/.test(js)){
-						manifest.content_scripts[i].js[j] = js.replace(/.js$/,".min.js");
-						grunt.log.ok("File " + chalk.cyan(js) + " set to " + chalk.cyan(js.replace(/.js$/,".min.js")));
-					}
-				});
-			}
-		});
-
-		grunt.file.write(options.manifest, JSON.stringify(manifest, undefined, 4));
-		done();
-	});
-
 	grunt.registerTask('build', [
-    'updatePackage',
 		'clean:build',
 		'uglify:build',
 		'copy:build',
 		'clean:js',
-		'setMinContentScripts',
 		'compress'
 	]);
 };

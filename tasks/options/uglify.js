@@ -4,7 +4,7 @@ module.exports = {
 			expand: true,
 			cwd: 'app/scripts/',
 			src: ['**/*.js', '!**/*.min.js'],
-			dest: 'build/js',
+			dest: 'build/scripts',
 			ext: '.min.js'
     }]
 	}
