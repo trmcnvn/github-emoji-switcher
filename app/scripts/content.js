@@ -4,13 +4,12 @@
     var img = document.createElement('img');
     img.src = node.getAttribute('fallback-src').replace(
       'https://assets-cdn.github.com/images/icons/emoji/unicode/',
-      'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/36x36/'
+      'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/'
     );
     img.className = 'emoji';
     img.alt = img.title = ':' + node.getAttribute('alias') + ':';
     img.width = 20;
     img.height = 20;
-    img.align = 'absmiddle';
     return img;
   }
   
@@ -36,7 +35,7 @@ var replaceEmoji = function(node) {
     }
     emojis[k].src = emojis[k].src.replace(
       'https://assets-cdn.github.com/images/icons/emoji/unicode/',
-      'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/36x36/');
+      'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/');
   }
 }
 
